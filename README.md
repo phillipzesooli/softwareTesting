@@ -1,5 +1,8 @@
+Test Automation
+================================================
+
 Test Automation Cucumber and Selenium Webdriver
 
-Test is run on saucedemo.com website.
+The test uses the [Saucedemo](https://www.saucedemo.com/) site.
 
-
+Phillip Malcolm Masette Zesooli
