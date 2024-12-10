@@ -25,12 +25,24 @@ public class HomePage {
     @FindBy(css = "#checkout_info_container >div.checkout_info_wrapper > form > div.checkout_info > div.error-message-container.error> h3")
     private WebElement checkoutErrorMessage;
 
+    @FindBy(css = "#checkout_summary_container > div > div.summary_info> div.summary_tax_label")
+    private WebElement taxLabel;
+
     private static final Map<String, By> textFields = Map.of(
             "Username", By.id("user-name"),
             "Password", By.id("password"),
             "First Name", By.id("first-name"),
             "Last Name", By.id("last-name"),
             "Zip Code", By.id("postal-code")
+    );
+
+    private static final Map<String , By> itemLinks = Map.of(
+            "Sauce Labs Backpack", By.id("item_4_title_link"),
+            "Sauce Labs Bike Light", By.id("item_0_title_link"),
+            "Sauce Labs Bolt T-Shirt", By.id("item_1_title_link"),
+            "Sauce Labs Fleece Jacket", By.id("item_5_title_link"),
+            "Sauce Labs Onesie", By.id("item_2_title_link"),
+            "Test.allTheThings() T-Shirt (Red)", By.id("item_3_title_link")
     );
 
     private static final Map<String, By> itemButtons = Map.of(
@@ -47,7 +59,12 @@ public class HomePage {
             "Cart", By.className("shopping_cart_link"),
             "Checkout", By.id("checkout"),
             "Continue", By.id("continue"),
-            "Finish", By.id("finish")
+            "Finish", By.id("finish"),
+            "Sort", By.className("select_container"),
+            "Menu", By.id("react-burger-menu-btn"),
+            "Reset", By.id("reset_sidebar_link"),
+            "All items",By.id("inventory_sidebar_link"),
+            "Logout", By.id("logout_sidebar_link")
     );
 
     public HomePage(WebDriver driver) {
@@ -71,6 +88,11 @@ public class HomePage {
         driver.findElement(navigationButtons.get(button)).click();
     }
 
+    public void pageReset() {
+        driver.findElement(navigationButtons.get("Menu")).click();
+        driver.findElement(navigationButtons.get("Reset")).click();
+    }
+
 
     public String getErrorMessage() {
         return errorMessage.getText();
@@ -82,6 +104,7 @@ public class HomePage {
     public void addItemToCart(String item) {
         driver.findElement(itemButtons.get(item)).click();
     }
+    public void clickItem(String item){ driver.findElement(itemLinks.get(item)).click();}
 
     public String getTotal() {
         return priceLabel.getText();
@@ -90,6 +113,12 @@ public class HomePage {
     public String getSubtotal(){
         return subtotalLabel.getText();
     }
+    public String getTax(){ return taxLabel.getText();}
+
+    public String getPageUrl() {
+        return driver.getCurrentUrl();
+    }
+
 
 }
 

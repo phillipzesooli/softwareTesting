@@ -1,5 +1,6 @@
 package softwaretest;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -13,6 +14,14 @@ public class ShoppingStepDefs extends AbstractStepDefs {
         homePage.addItemToCart(item);
     }
 
+    @Given("the {string} is clicked")
+    public void itemIsClicked(String item){
+        homePage.clickItem(item);
+    }
+    @When("the tax is {string}")
+    public void getTax(String tax) {
+        assertEquals(tax, homePage.getTax());
+    }
 
     @When("the subtotal reads {string}")
     public void theSubtotalReads(String subtotal){
@@ -28,5 +37,14 @@ public class ShoppingStepDefs extends AbstractStepDefs {
     public void errorMessageAtCheckoutIsShown(String errorMessage){
         assertEquals(errorMessage, homePage.getCheckoutErrorMessage());
     }
+    @And("the page is reset")
+    public void pageIsReset() {
+        homePage.pageReset();
+    }
 
+    @Then("the {string} page is opened")
+    public void pageIsOpened(String link) {
+        assertEquals(link, homePage.getPageUrl());
+
+    }
 }

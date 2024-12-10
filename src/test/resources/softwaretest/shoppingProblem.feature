@@ -16,3 +16,4 @@ Feature: Saucedemo Shopping
     And the 'Zip Code' field is filled with '4001'
     When the 'Continue' button is clicked
     Then the error message should read 'Error: Last Name is required'
+    And the page is reset
