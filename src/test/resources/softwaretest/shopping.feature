@@ -36,6 +36,10 @@ Feature: Saucedemo Shopping
       And the 'All items' button is clicked
       Then the 'https://www.saucedemo.com/inventory.html' page is opened
 
+    Scenario: Finding the description of an item
+      Given the 'Sauce Labs Backpack' is clicked
+      Then the description of the product should read 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.'
+
   Scenario Outline: Getting the tax for different items
     Given the '<item>' is added to the cart
     And the 'Cart' button is clicked

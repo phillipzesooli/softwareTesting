@@ -27,6 +27,8 @@ public class HomePage {
 
     @FindBy(css = "#checkout_summary_container > div > div.summary_info> div.summary_tax_label")
     private WebElement taxLabel;
+    @FindBy(css = "#inventory_item_container > div > div > div.inventory_details_desc_container > div.inventory_details_desc.large_size")
+    private WebElement details;
 
     private static final Map<String, By> textFields = Map.of(
             "Username", By.id("user-name"),
@@ -117,6 +119,9 @@ public class HomePage {
 
     public String getPageUrl() {
         return driver.getCurrentUrl();
+    }
+    public String getDetails(){
+        return details.getText();
     }
 
 
