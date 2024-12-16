@@ -53,4 +53,8 @@ public class ShoppingStepDefs extends AbstractStepDefs {
         assertEquals(description, homePage.getDetails());
     }
 
+    @Then("the about page error message should read {string}")
+    public void theAboutPageErrorMessageShouldReadNotFound(String error) {
+        assertEquals(error, homePage.getAboutError());
+    }
 }

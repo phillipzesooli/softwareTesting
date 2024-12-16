@@ -30,6 +30,9 @@ public class HomePage {
     @FindBy(css = "#inventory_item_container > div > div > div.inventory_details_desc_container > div.inventory_details_desc.large_size")
     private WebElement details;
 
+    @FindBy(css = "#__next > div.MuiBox-root.css-b8pqf7 > div > div > div.MuiStack-root.css-1eyq87n > div > div:nth-child(1) > h2")
+    private WebElement aboutError;
+
     private static final Map<String, By> textFields = Map.of(
             "Username", By.id("user-name"),
             "Password", By.id("password"),
@@ -65,6 +68,7 @@ public class HomePage {
             "Menu", By.id("react-burger-menu-btn"),
             "Reset", By.id("reset_sidebar_link"),
             "All items",By.id("inventory_sidebar_link"),
+            "About", By.id("about_sidebar_link"),
             "Logout", By.id("logout_sidebar_link")
     );
 
@@ -122,6 +126,10 @@ public class HomePage {
     public String getDetails(){
         return details.getText();
     }
+    public String getAboutError(){
+        return aboutError.getText();
+    }
+
 
 
 }

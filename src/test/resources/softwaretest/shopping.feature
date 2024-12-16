@@ -40,6 +40,11 @@ Feature: Saucedemo Shopping
       Given the 'Sauce Labs Backpack' is clicked
       Then the description of the product should read 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.'
 
+  Scenario: Navigating to the about page
+    Given the 'Menu' button is clicked
+    When the 'About' button is clicked
+    Then the 'https://saucelabs.com/' page is opened
+
   Scenario Outline: Getting the tax for different items
     Given the '<item>' is added to the cart
     And the 'Cart' button is clicked

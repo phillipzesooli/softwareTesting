@@ -17,3 +17,11 @@ Feature: Saucedemo Shopping
     When the 'Continue' button is clicked
     Then the error message should read 'Error: Last Name is required'
     And the page is reset
+
+  Scenario: Navigating to the About page
+    Given the 'Menu' button is clicked
+    And the 'About' button is clicked
+    When the 'https://saucelabs.com/error/404' page is opened
+    Then the about page error message should read '404 Not Found'
+
+
