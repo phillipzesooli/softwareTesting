@@ -30,13 +30,13 @@ Feature: Saucedemo Shopping
     When the total price after tax reads 'Total: $0.00'
     Then the 'Finish' button is clicked
 
-    Scenario: Navigating to all items
+  Scenario: Navigating to all items
       Given the 'Sauce Labs Bike Light' is clicked
       When the 'Menu' button is clicked
       And the 'All items' button is clicked
       Then the 'https://www.saucedemo.com/inventory.html' page is opened
 
-    Scenario: Finding the description of an item
+  Scenario: Finding the description of an item
       Given the 'Sauce Labs Backpack' is clicked
       Then the description of the product should read 'carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.'
 

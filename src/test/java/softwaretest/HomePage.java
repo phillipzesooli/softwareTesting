@@ -62,7 +62,6 @@ public class HomePage {
             "Checkout", By.id("checkout"),
             "Continue", By.id("continue"),
             "Finish", By.id("finish"),
-            "Sort", By.className("select_container"),
             "Menu", By.id("react-burger-menu-btn"),
             "Reset", By.id("reset_sidebar_link"),
             "All items",By.id("inventory_sidebar_link"),

@@ -48,11 +48,6 @@ public class ShoppingStepDefs extends AbstractStepDefs {
 
     }
 
-//    @Then("the price of the product should read {string}")
-//    public void thePriceOfTheProductShouldReadPrice(String total) {
-//        assertEquals(total, homePage.getTotal());
-//    }
-
     @Then("the description of the product should read {string}")
     public void theDescriptionOfTheProductShouldReadDetails(String description) {
         assertEquals(description, homePage.getDetails());
